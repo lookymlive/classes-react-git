@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Class1 } from "./classes";
+import { Class1, Class2 } from "./classes";
 
 
 const App: React.FC = () => {
@@ -7,6 +7,7 @@ const App: React.FC = () => {
 
   const classes = [
     { id: 1, name: "Class 1: Introduction to React", component: <Class1 /> },
+    { id: 2, name: "Class 2: Advanced State Management", component: <Class2 /> },
     // Add more classes as needed here
   ];
 

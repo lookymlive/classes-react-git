@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Classes-React-Git",
+  "homepage": "https://lookymlive.github.io/classes-react-git",
   "name": "classes-react-git",
   "private": true,
   "version": "0.0.0",
@@ -13,8 +13,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
