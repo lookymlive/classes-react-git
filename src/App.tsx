@@ -1,31 +1,36 @@
 import React, { useState } from "react";
-import { Class1, Class2 } from "./classes";
+import { Class1 } from "./classes";
 
 const App: React.FC = () => {
-  const [claseSeleccionada, setClaseSeleccionada] = useState<number>(1);
+  const [selectedClass, setSelectedClass] = useState<number | null>(null);
 
-  const renderClase = () => {
-    switch (claseSeleccionada) {
-      case 1:
-        return <Class1 />;
-      case 2:
-        return <Class2 />;
-      default:
-        return <div>Seleccione una clase válida</div>;
-    }
-  };
+  const classes = [
+    { id: 1, name: "Class 1: Introduction to React", component: <Class1 /> },
+    // Add more classes as needed here
+  ];
 
   return (
-    <div>
-      <h1>Selector de Clases</h1>
+    <div style={{ padding: "20px" }}>
+      <h1>React Vite Classes</h1>
+      <p>Select a class to start learning:</p>
+
       <select
-        value={claseSeleccionada}
-        onChange={(e) => setClaseSeleccionada(Number(e.target.value))}
+        onChange={(e) => setSelectedClass(Number(e.target.value))}
+        defaultValue=""
       >
-        <option value={1}>Clase 1</option>
-        <option value={2}>Clase 2</option>
+        <option value="" disabled>
+          Select a Class
+        </option>
+        {classes.map((cls) => (
+          <option key={cls.id} value={cls.id}>
+            {cls.name}
+          </option>
+        ))}
       </select>
-      <div style={{ marginTop: "20px" }}>{renderClase()}</div>
+
+      <div style={{ marginTop: "20px" }}>
+        {selectedClass !== null && classes[selectedClass - 1].component}
+      </div>
     </div>
   );
 };
