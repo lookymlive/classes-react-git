@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Class1 } from "./classes";
 
+
 const App: React.FC = () => {
   const [selectedClass, setSelectedClass] = useState<number | null>(null);
 
